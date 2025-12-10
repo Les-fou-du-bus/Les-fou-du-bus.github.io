@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<h2>Il y a 30 bonbons.
+ Un enfant en mange 7, puis sa sœur en mange le double de ce qu’il a mangé.
+ Combien reste-t-il de bonbons ?</h2>
+
+<button onclick="verifierReponse(9)">9</button>
+<button onclick="verifierReponse(16)">16</button>
+<button onclick="verifierReponse(13)">13</button>
+<button onclick="verifierReponse(20)">20</button>
+
+<p id="result"></p>
+
+<script>
+function verifierReponse(rep) {
+    var correct = "9";
+    var result = document.getElementById("result");
+
+    if (rep == correct) {
+        result.innerHTML = "Bonne réponse";
+    } else {
+        result.innerHTML = "Dommage, tu réussira a la prochaine";
+    }
+}
+</script>
+
+</body>
+</html>
