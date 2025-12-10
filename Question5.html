@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<h2>Un joueur marque 15 points au premier match, puis 9 de plus au deuxième, mais 4 de moins au troisième.
+ Combien a-t-il marqué en tout ?</h2>
+
+<button onclick="verifierReponse(20)">20</button>
+<button onclick="verifierReponse(30)">30</button>
+<button onclick="verifierReponse(28)">28</button>
+<button onclick="verifierReponse(24)">24</button>
+
+<p id="result"></p>
+
+<script>
+function verifierReponse(rep) {
+    var correct = "24";
+    var result = document.getElementById("result");
+
+    if (rep == correct) {
+        result.innerHTML = "Bonne réponse";
+    } else {
+        result.innerHTML = "Dommage, tu réussira a la prochaine";
+    }
+}
+</script>
+
+</body>
+</html>
