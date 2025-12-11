@@ -8,23 +8,29 @@
     <link rel="stylesheet" href="question.css">
 
 <div class="card1"> <h2>
-Résoudre l’équation suivante : 2(x−3)+4=3x−52(x - 3) + 4 = 3x - 52(x−3)+4=3x−5
+Sophie a 150 euros. Elle veut acheter plusieurs articles. Le premier article coûte 45 euros, le deuxième article coûte 27 euros, et le troisième article coûte 68 euros.
+
 Question :
- Quelle est la valeur de x ?
+Après avoir acheté ces trois articles, combien d'argent lui restera-t-il ?
+Résolution :
+
+Tu peux résoudre ce problème en effectuant les opérations suivantes :
+Additionner le prix des trois articles.
+Soustraire cette somme du montant initial de 150 euros.
 ?</h2> 
 
 
-<button onclick="verifierReponse(3)">3</button>
+<button onclick="verifierReponse(10)">10</button>
 <button onclick="verifierReponse(9)">9</button>
 <button onclick="verifierReponse(-3)">-3</button>
-<button onclick="verifierReponse(10)">10</button>
+<button onclick="verifierReponse(2)">2</button>
 </div>
 
 <p id="result"></p>
 
 <script>
 function verifierReponse(rep) {
-    var correct = "3";
+    var correct = "10";
     var result = document.getElementById("result");
 
     if (rep == correct) {
