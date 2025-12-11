@@ -15,17 +15,17 @@ Quelle est la longueur du câble ?
 ?</h2> 
 
 
-<button onclick="verifierReponse(6,4)">6,4</button>
+<button onclick="verifierReponse(6.4)">6.4</button>
 <button onclick="verifierReponse(5)">5</button>
 <button onclick="verifierReponse(-3)">-3</button>
-<button onclick="verifierReponse(3,14)">3,14</button>
+<button onclick="verifierReponse(3.14)">3.14</button>
 </div>
 
 <p id="result"></p>
 
 <script>
 function verifierReponse(rep) {
-    var correct = "6,4";
+    var correct = "6.4";
     var result = document.getElementById("result");
 
     if (rep == correct) {
