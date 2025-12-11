@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<h2> Un rectangle a une longueur de 15 cm et une largeur de 8 cm. Si on veut ajouter un carré de 4 cm de côté à un des coins du rectangle, quelle sera la nouvelle aire totale ?</h2>
+
+<button onclick="verifierReponse(10)">132 cm²</button>
+<button onclick="verifierReponse(12)">128 cm²</button>
+<button onclick="verifierReponse(14)">148 cm²</button>
+<button onclick="verifierReponse(6)">180 cm²</button>
+
+<p id="result"></p>
+
+<script>
+function verifierReponse(rep) {
+    var correct = "10";
+    var result = document.getElementById("result");
+
+    if (rep == correct) {
+        result.innerHTML = "Bonne réponse";
+    } else {
+        result.innerHTML = "Dommage, tu réussira a la prochaine";
+    }
+}
+</script>
+
+</body>
+</html>
