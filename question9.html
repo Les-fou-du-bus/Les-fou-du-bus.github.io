@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+    <link rel="stylesheet" href="question.css">
+
+<div class="card1"> <h2>
+Résoudre l’équation suivante : 2(x−3)+4=3x−52(x - 3) + 4 = 3x - 52(x−3)+4=3x−5
+Question :
+ Quelle est la valeur de x ?
+?</h2> 
+
+
+<button onclick="verifierReponse(3)">3</button>
+<button onclick="verifierReponse(9)">9</button>
+<button onclick="verifierReponse(-3)">-3</button>
+<button onclick="verifierReponse(10)">10</button>
+</div>
+
+<p id="result"></p>
+
+<script>
+function verifierReponse(rep) {
+    var correct = "3";
+    var result = document.getElementById("result");
+
+    if (rep == correct) {
+        result.innerHTML = "Bonne réponse";
+    } else {
+        result.innerHTML = "Dommage, tu réussira a la prochaine";
+    }
+}
+</script>
+
+</body>
+</html>

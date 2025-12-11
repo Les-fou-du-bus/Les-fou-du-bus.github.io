@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+    <link rel="stylesheet" href="question.css">
+
+<div class="card1"> <h2>
+Dans un parc, un arbre est planté à une distance de 5 mètres d'un bâtiment. Un câble est tendu entre le sommet de l'arbre et le sommet du bâtiment. Si la hauteur de l'arbre est de 8 mètres et celle du bâtiment est de 12 mètres, quelle est la longueur du câble, en supposant que l'arbre, le bâtiment et le câble forment un triangle rectangle ?
+
+Question :
+Quelle est la longueur du câble ?
+?</h2> 
+
+
+<button onclick="verifierReponse(6,4)">6,4</button>
+<button onclick="verifierReponse(5)">5</button>
+<button onclick="verifierReponse(-3)">-3</button>
+<button onclick="verifierReponse(3,14)">3,14</button>
+</div>
+
+<p id="result"></p>
+
+<script>
+function verifierReponse(rep) {
+    var correct = "6,4";
+    var result = document.getElementById("result");
+
+    if (rep == correct) {
+        result.innerHTML = "Bonne réponse";
+    } else {
+        result.innerHTML = "Dommage, tu réussira a la prochaine";
+    }
+}
+</script>
+
+</body>
+</html>
