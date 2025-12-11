@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<h2>Un magasin vend un pantalon à 40 $ après une remise de 20 %. Quel était le prix initial du pantalon avant la remise ?</h2>
+
+<button onclick="verifierReponse(10)">48$</button>
+<button onclick="verifierReponse(12)">50$</button>
+<button onclick="verifierReponse(14)">52$</button>
+<button onclick="verifierReponse(6)">55</button>
+
+<p id="result"></p>
+
+<script>
+function verifierReponse(rep) {
+    var correct = "50$";
+    var result = document.getElementById("result");
+
+    if (rep == correct) {
+        result.innerHTML = "Bonne réponse";
+    } else {
+        result.innerHTML = "Dommage, tu réussira a la prochaine";
+    }
+}
+</script>
+
+</body>
+</html>

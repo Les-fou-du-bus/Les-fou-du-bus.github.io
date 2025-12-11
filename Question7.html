@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<h2>Dans une classe, il y a 12 garçons et 8 filles. Quel est le pourcentage de garçons dans la classe ?</h2>
+
+<button onclick="verifierReponse(10)">40%</button>
+<button onclick="verifierReponse(12)">50%</button>
+<button onclick="verifierReponse(14)">60%</button>
+<button onclick="verifierReponse(6)">45%</button>
+
+<p id="result"></p>
+
+<script>
+function verifierReponse(rep) {
+    var correct = "60%";
+    var result = document.getElementById("result");
+
+    if (rep == correct) {
+        result.innerHTML = "Bonne réponse";
+    } else {
+        result.innerHTML = "Dommage, tu réussira a la prochaine";
+    }
+}
+</script>
+
+</body>
+</html>
