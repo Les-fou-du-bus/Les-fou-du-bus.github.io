@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+    <link rel="stylesheet" href="question.css">
+
+<div class="card1"> <h2>
+ Un rectangle a une longueur de 10 cm et une largeur de 6 cm. Si on trace une diagonale, quelle est sa longueur ?</h2> 
+
+
+<button onclick="verifierReponse(12)">12</button>
+<button onclick="verifierReponse(16)">16</button>
+<button onclick="verifierReponse(17)">17</button>
+<button onclick="verifierReponse(35)">35</button>
+
+
+<p id="result"></p>
+</div>
+<script>
+function verifierReponse(rep) {
+    var correct = "12";
+    var result = document.getElementById("result");
+
+    if (rep == correct) {
+        result.innerHTML = "Bonne réponse";
+    } else {
+        result.innerHTML = "Dommage, tu réussira a la prochaine";
+    }
+}
+</script>
+
+</body>
+</html>
