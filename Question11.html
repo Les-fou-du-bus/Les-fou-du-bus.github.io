@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+    <link rel="stylesheet" href="question.css">
+
+<div class="card1"> <h2>
+1.Résoudre les équations suivantes :
+
+5
+𝑥
+−
+7
+=
+3
+𝑥
++
+9
+?</h2> 
+
+
+<button onclick="verifierReponse(8)">8</button>
+<button onclick="verifierReponse(5)">5</button>
+<button onclick="verifierReponse(-3)">-3</button>
+<button onclick="verifierReponse(3.14)">3.14</button>
+
+
+<p id="result"></p>
+</div>
+<script>
+function verifierReponse(rep) {
+    var correct = "8";
+    var result = document.getElementById("result");
+
+    if (rep == correct) {
+        result.innerHTML = "Bonne réponse";
+    } else {
+        result.innerHTML = "Dommage, tu réussira a la prochaine";
+    }
+}
+</script>
+
+</body>
+</html>
