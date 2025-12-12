@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+    <link rel="stylesheet" href="question.css">
+
+<div class="card1"> <h2>
+ La somme de deux nombres est 198. Si l'un des nombres est 35 et l'autre est 56 quel est l'autre nombre ?</h2> 
+
+
+<button onclick="verifierReponse(67)">67</button>
+<button onclick="verifierReponse(106)">106</button>
+<button onclick="verifierReponse(107)">107</button>
+<button onclick="verifierReponse(35)">35</button>
+
+
+<p id="result"></p>
+</div>
+<script>
+function verifierReponse(rep) {
+    var correct = "107";
+    var result = document.getElementById("result");
+
+    if (rep == correct) {
+        result.innerHTML = "Bonne réponse";
+    } else {
+        result.innerHTML = "Dommage, tu réussira a la prochaine";
+    }
+}
+</script>
+
+</body>
+</html>
