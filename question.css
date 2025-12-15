@@ -36,24 +36,24 @@ body {
 }
 
 .boitebas {
-  position: fixed; /* Fixe la boîte par rapport à la fenêtre du navigateur */
-  bottom: 20px;    /* Distance du bas */
-  right: 20px;     /* Distance de la droite */
-  background-color: #f0f0f0; /* Couleur de fond */
-  padding: 15px 20px; /* Marge intérieure (haut/bas, gauche/droite) */
-  border-radius: 10px; /* Coins arrondis */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre portée pour le relief */
-  z-index: 1000; /* S'assure qu'elle est au-dessus des autres éléments */
-  max-width: 300px; /* Largeur maximale de la boîte */
-  border: 1px solid #ccc; /* Bordure subtile */
-  font-family: sans-serif; /* Police de caractères */
-  color: #333; /* Couleur du texte */
-  display: flex; /* Utilise Flexbox pour aligner le contenu */
-  align-items: center; /* Aligne verticalement le contenu au centre */
+  position: fixed; 
+  bottom: 20px;   
+  right: 20px;     
+  background-color: #f0f0f0; 
+  padding: 15px 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  z-index: 1000; 
+  max-width: 300px; 
+  border: 1px solid #ccc; 
+  font-family: sans-serif; 
+  color: #333; 
+  display: flex;
+  align-items: center; 
 }
 
 .boite-fixe p {
-  margin: 0; /* Supprime la marge par défaut du paragraphe */
+  margin: 0; 
   font-size: 1rem;
 }
 
