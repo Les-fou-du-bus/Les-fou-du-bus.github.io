@@ -1,4 +1,5 @@
 function verifierReponse() { 
-let score=0; 
 
+    
+localStorage.setItem("score", 0);
 } 
