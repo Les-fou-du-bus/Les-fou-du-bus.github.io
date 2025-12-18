@@ -7,31 +7,51 @@
  <link rel="stylesheet" href="question.css">
 
 
-<div class="card1"><h2>Dans une classe, il y a 12 garçons et 8 filles. Quel est le pourcentage de garçons dans la classe ?</h2>
+<div class="card1">
+    <h2>Dans une classe, il y a 12 garçons et 8 filles. Quel est le pourcentage de garçons dans la classe ?</h2>
 
-<button onclick="verifierReponse('40%')">40%</button>
-<button onclick="verifierReponse('50%')">50%</button>
-<button onclick="verifierReponse('60%')">60%</button>
-<button onclick="verifierReponse('45%')">45%</button>
+
+
+    <button onclick="verifierReponse(this, '40%')">40%</button>
+    <button onclick="verifierReponse(this, '50%')">50%</button>
+    <button onclick="verifierReponse(this, '60%')">60%</button>
+    <button onclick="verifierReponse(this, '45%')">45%</button>
 
 <p id="result"></p>
+ <p id="score"></p>
 </div>
-<script>
-function verifierReponse(rep) {
-    var correct = "60%";
-    var result = document.getElementById("result");
 
-    if (rep == correct) {
-        result.innerHTML = "Bonne réponse";
-         score++;
+<script>
+let score = 0;
+let dejaRepondu = false;
+
+function verifierReponse(bouton, rep) {
+    if (dejaRepondu) return; 
+    dejaRepondu = true;
+
+    let correct = "60%";
+    let result = document.getElementById("result");
+    let scoreAffichage = document.getElementById("score");
+    let boutons = document.querySelectorAll("button");
+
+   
+    boutons.forEach(btn => btn.disabled = true);
+
+    if (rep === correct) {
+        result.innerHTML = "Bonne réponse !";
+        score++;
     } else {
-        result.innerHTML = "Dommage, tu réussira a la prochaine";
+        result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
+
+    scoreAffichage.innerHTML = "Score : " + score + " / 14";
 }
 </script>
+
 <div class="boitebas">
-    
-       <a href="Question8.html"> <h3>Continuer le quiz<h3>
-    </div>
+    <a href="Question8.html"><h3>Continuer le quiz</h3></a>
+</div>
+
 </body>
 </html>
+

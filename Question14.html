@@ -11,30 +11,46 @@
  Un rectangle a une longueur de 10 cm et une largeur de 6 cm. Si on trace une diagonale, quelle est sa longueur ?</h2> 
 
 
-<button onclick="verifierReponse(16)">16</button>
-<button onclick="verifierReponse(12)">12</button>
-<button onclick="verifierReponse(17)">17</button>
-<button onclick="verifierReponse(35)">35</button>
 
+    <button onclick="verifierReponse(this, '16')">16</button>
+    <button onclick="verifierReponse(this, '12')">12</button>
+    <button onclick="verifierReponse(this, '17')">17</button>
+    <button onclick="verifierReponse(this, '35')">35</button>
 
 <p id="result"></p>
+ <p id="score"></p>
 </div>
-<script>
-function verifierReponse(rep) {
-    var correct = "12";
-    var result = document.getElementById("result");
 
-    if (rep == correct) {
-        result.innerHTML = "Bonne réponse";
-         score++;
+<script>
+let score = 0;
+let dejaRepondu = false;
+
+function verifierReponse(bouton, rep) {
+    if (dejaRepondu) return; 
+    dejaRepondu = true;
+
+    let correct = "12";
+    let result = document.getElementById("result");
+    let scoreAffichage = document.getElementById("score");
+    let boutons = document.querySelectorAll("button");
+
+   
+    boutons.forEach(btn => btn.disabled = true);
+
+    if (rep === correct) {
+        result.innerHTML = "Bonne réponse !";
+        score++;
     } else {
-        result.innerHTML = "Dommage, tu réussira a la prochaine";
+        result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
+
+    scoreAffichage.innerHTML = "Score : " + score + " / 14";
 }
 </script>
+
 <div class="boitebas">
-    
-       <a href="note.html"> <h3>Continuer le quiz<h3>
-    </div>
+    <a href="note.html"><h3>Continuer le quiz</h3></a>
+</div>
+
 </body>
 </html>

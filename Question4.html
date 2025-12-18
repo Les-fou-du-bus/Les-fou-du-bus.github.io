@@ -2,38 +2,56 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="question.css">
 </head>
 <body>
- <link rel="stylesheet" href="question.css">
 
-
-<div class="card1"><h2>Un rectangle mesure 10 cm de long et 6 cm de large.
+<div class="card1">
+    <h2>Un rectangle mesure 10 cm de long et 6 cm de large.
  On augmente chaque côté de 2 cm.
  Quelle est la nouvelle aire ?</h2>
 
-<button onclick="verifierReponse(128)">128</button>
-<button onclick="verifierReponse(112)">112</button>
-<button onclick="verifierReponse(96)">96</button>
-<button onclick="verifierReponse(144)">144</button>
+
+
+<button onclick="verifierReponse(this, '128')">128</button>
+    <button onclick="verifierReponse(this, '112')">112</button>
+    <button onclick="verifierReponse(this, '96')">96</button>
+    <button onclick="verifierReponse(this, '144')">144</button>
 
 <p id="result"></p>
+ <p id="score"></p>
 </div>
-<script>
-function verifierReponse(rep) {
-    var correct = "96";
-    var result = document.getElementById("result");
 
-    if (rep == correct) {
-        result.innerHTML = "Bonne réponse";
-         score++;
+<script>
+let score = 0;
+let dejaRepondu = false;
+
+function verifierReponse(bouton, rep) {
+    if (dejaRepondu) return; 
+    dejaRepondu = true;
+
+    let correct = "96";
+    let result = document.getElementById("result");
+    let scoreAffichage = document.getElementById("score");
+    let boutons = document.querySelectorAll("button");
+
+   
+    boutons.forEach(btn => btn.disabled = true);
+
+    if (rep === correct) {
+        result.innerHTML = "Bonne réponse !";
+        score++;
     } else {
-        result.innerHTML = "Dommage, tu réussira a la prochaine";
+        result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
+
+    scoreAffichage.innerHTML = "Score : " + score + " / 14";
 }
 </script>
+
 <div class="boitebas">
-    
-       <a href="Question5.html"> <h3>Continuer le quiz<h3>
-    </div>
+    <a href="Question5.html"><h3>Continuer le quiz</h3></a>
+</div>
+
 </body>
 </html>

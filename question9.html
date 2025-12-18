@@ -20,30 +20,47 @@ Soustraire cette somme du montant initial de 150 euros.
 ?</h2> 
 
 
-<button onclick="verifierReponse(10)">10</button>
-<button onclick="verifierReponse(9)">9</button>
-<button onclick="verifierReponse(-3)">-3</button>
-<button onclick="verifierReponse(2)">2</button>
 
+
+<button onclick="verifierReponse(this, '10')">10</button>
+    <button onclick="verifierReponse(this, '9')">9</button>
+    <button onclick="verifierReponse(this, '-3')">-3</button>
+    <button onclick="verifierReponse(this, '2')">2</button>
 
 <p id="result"></p>
+ <p id="score"></p>
 </div>
-<script>
-function verifierReponse(rep) {
-    var correct = "10";
-    var result = document.getElementById("result");
 
-    if (rep == correct) {
-        result.innerHTML = "Bonne réponse";
-         score++;
+<script>
+let score = 0;
+let dejaRepondu = false;
+
+function verifierReponse(bouton, rep) {
+    if (dejaRepondu) return; 
+    dejaRepondu = true;
+
+    let correct = "10";
+    let result = document.getElementById("result");
+    let scoreAffichage = document.getElementById("score");
+    let boutons = document.querySelectorAll("button");
+
+   
+    boutons.forEach(btn => btn.disabled = true);
+
+    if (rep === correct) {
+        result.innerHTML = "Bonne réponse !";
+        score++;
     } else {
-        result.innerHTML = "Dommage, tu réussira a la prochaine";
+        result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
+
+    scoreAffichage.innerHTML = "Score : " + score + " / 14";
 }
 </script>
+
 <div class="boitebas">
-    
-       <a href="question10.html"> <h3>Continuer le quiz<h3>
-    </div>
+    <a href="Question10.html"><h3>Continuer le quiz</h3></a>
+</div>
+
 </body>
 </html>

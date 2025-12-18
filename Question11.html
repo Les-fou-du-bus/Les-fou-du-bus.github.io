@@ -22,30 +22,46 @@
 ?</h2> 
 
 
-<button onclick="verifierReponse(8)">8</button>
-<button onclick="verifierReponse(5)">5</button>
-<button onclick="verifierReponse(-3)">-3</button>
-<button onclick="verifierReponse(3.14)">3.14</button>
 
+    <button onclick="verifierReponse(this, '8')">8</button>
+    <button onclick="verifierReponse(this, '5')">5</button>
+    <button onclick="verifierReponse(this, '-3')">-3</button>
+    <button onclick="verifierReponse(this, '3.14')">3.14</button>
 
 <p id="result"></p>
+ <p id="score"></p>
 </div>
-<script>
-function verifierReponse(rep) {
-    var correct = "8";
-    var result = document.getElementById("result");
 
-    if (rep == correct) {
-        result.innerHTML = "Bonne réponse";
-         score++;
+<script>
+let score = 0;
+let dejaRepondu = false;
+
+function verifierReponse(bouton, rep) {
+    if (dejaRepondu) return; 
+    dejaRepondu = true;
+
+    let correct = "8";
+    let result = document.getElementById("result");
+    let scoreAffichage = document.getElementById("score");
+    let boutons = document.querySelectorAll("button");
+
+   
+    boutons.forEach(btn => btn.disabled = true);
+
+    if (rep === correct) {
+        result.innerHTML = "Bonne réponse !";
+        score++;
     } else {
-        result.innerHTML = "Dommage, tu réussira a la prochaine";
+        result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
+
+    scoreAffichage.innerHTML = "Score : " + score + " / 14";
 }
 </script>
+
 <div class="boitebas">
-    
-       <a href="Question12.html"> <h3>Continuer le quiz<h3>
-    </div>
+    <a href="Question12.html"><h3>Continuer le quiz</h3></a>
+</div>
+
 </body>
 </html>

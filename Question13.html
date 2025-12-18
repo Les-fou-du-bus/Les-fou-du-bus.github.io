@@ -11,30 +11,47 @@
  La somme de deux nombres est 198. Si l'un des nombres est 35 et l'autre est 56 quel est l'autre nombre ?</h2> 
 
 
-<button onclick="verifierReponse(54)">54</button>
-<button onclick="verifierReponse(109)">109</button>
-<button onclick="verifierReponse(107)">107</button>
-<button onclick="verifierReponse(35)">35</button>
 
+
+    <button onclick="verifierReponse(this, '54')">54</button>
+    <button onclick="verifierReponse(this, '109')">109</button>
+    <button onclick="verifierReponse(this, '107')">107</button>
+    <button onclick="verifierReponse(this, '35')">35</button>
 
 <p id="result"></p>
+ <p id="score"></p>
 </div>
-<script>
-function verifierReponse(rep) {
-    var correct = "107";
-    var result = document.getElementById("result");
 
-    if (rep == correct) {
-        result.innerHTML = "Bonne réponse";
-         score++;
+<script>
+let score = 0;
+let dejaRepondu = false;
+
+function verifierReponse(bouton, rep) {
+    if (dejaRepondu) return; 
+    dejaRepondu = true;
+
+    let correct = "107";
+    let result = document.getElementById("result");
+    let scoreAffichage = document.getElementById("score");
+    let boutons = document.querySelectorAll("button");
+
+   
+    boutons.forEach(btn => btn.disabled = true);
+
+    if (rep === correct) {
+        result.innerHTML = "Bonne réponse !";
+        score++;
     } else {
-        result.innerHTML = "Dommage, tu réussira a la prochaine";
+        result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
+
+    scoreAffichage.innerHTML = "Score : " + score + " / 14";
 }
 </script>
+
 <div class="boitebas">
-    
-       <a href="Question14.html"> <h3>Continuer le quiz<h3>
-    </div>
+    <a href="Question14.html"><h3>Continuer le quiz</h3></a>
+</div>
+
 </body>
 </html>

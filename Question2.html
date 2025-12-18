@@ -2,38 +2,56 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="question.css">
 </head>
 <body>
- <link rel="stylesheet" href="question.css">
 
-
-<div class="card1"><h2>Il y a 30 bonbons.
+<div class="card1">
+    <h2>Il y a 30 bonbons.
  Un enfant en mange 7, puis sa sœur en mange le double de ce qu’il a mangé.
  Combien reste-t-il de bonbons ?</h2>
 
-<button onclick="verifierReponse(13)">13</button>
-<button onclick="verifierReponse(16)">16</button>
-<button onclick="verifierReponse(9)">9</button>
-<button onclick="verifierReponse(20)">20</button>
+
+
+    <button onclick="verifierReponse(this, '13')">13</button>
+    <button onclick="verifierReponse(this, '16')">16</button>
+    <button onclick="verifierReponse(this, '9')">9</button>
+    <button onclick="verifierReponse(this, '20')">20</button>
 
 <p id="result"></p>
+ <p id="score"></p>
 </div>
-<script>
-function verifierReponse(rep) {
-    var correct = "9";
-    var result = document.getElementById("result");
 
-    if (rep == correct) {
-        result.innerHTML = "Bonne réponse";
-       score++;
+<script>
+let score = 0;
+let dejaRepondu = false;
+
+function verifierReponse(bouton, rep) {
+    if (dejaRepondu) return; 
+    dejaRepondu = true;
+
+    let correct = "9";
+    let result = document.getElementById("result");
+    let scoreAffichage = document.getElementById("score");
+    let boutons = document.querySelectorAll("button");
+
+   
+    boutons.forEach(btn => btn.disabled = true);
+
+    if (rep === correct) {
+        result.innerHTML = "Bonne réponse !";
+        score++;
     } else {
-        result.innerHTML = "Dommage, tu réussira a la prochaine";
+        result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
+
+    scoreAffichage.innerHTML = "Score : " + score + " / 14";
 }
 </script>
+
 <div class="boitebas">
-    
-       <a href="Question3.html"> <h3>Continuer le quiz<h3>
-    </div>
+    <a href="Question3.html"><h3>Continuer le quiz</h3></a>
+</div>
+
 </body>
 </html>

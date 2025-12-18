@@ -24,30 +24,47 @@ Résolution d’équations linéaires
 ?</h2> 
 
 
-<button onclick="verifierReponse(14)">14</button>
-<button onclick="verifierReponse(8)">8</button>
-<button onclick="verifierReponse(17)">17</button>
-<button onclick="verifierReponse(16)">16</button>
 
+
+    <button onclick="verifierReponse(this, '14')">14</button>
+    <button onclick="verifierReponse(this, '8')">8</button>
+    <button onclick="verifierReponse(this, '17')">17</button>
+    <button onclick="verifierReponse(this, '16')">16</button>
 
 <p id="result"></p>
+ <p id="score"></p>
 </div>
-<script>
-function verifierReponse(rep) {
-    var correct = "17";
-    var result = document.getElementById("result");
 
-    if (rep == correct) {
-        result.innerHTML = "Bonne réponse";
-         score++;
+<script>
+let score = 0;
+let dejaRepondu = false;
+
+function verifierReponse(bouton, rep) {
+    if (dejaRepondu) return; 
+    dejaRepondu = true;
+
+    let correct = "17";
+    let result = document.getElementById("result");
+    let scoreAffichage = document.getElementById("score");
+    let boutons = document.querySelectorAll("button");
+
+   
+    boutons.forEach(btn => btn.disabled = true);
+
+    if (rep === correct) {
+        result.innerHTML = "Bonne réponse !";
+        score++;
     } else {
-        result.innerHTML = "Dommage, tu réussira a la prochaine";
+        result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
+
+    scoreAffichage.innerHTML = "Score : " + score + " / 14";
 }
 </script>
+
 <div class="boitebas">
-    
-       <a href="Question13.html"> <h3>Continuer le quiz<h3>
-    </div>
+    <a href="Question13.html"><h3>Continuer le quiz</h3></a>
+</div>
+
 </body>
 </html>

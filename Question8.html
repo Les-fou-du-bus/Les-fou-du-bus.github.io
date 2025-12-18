@@ -8,29 +8,47 @@
 
 <div class="card1"><h2> Un rectangle a une longueur de 15 cm et une largeur de 8 cm. Si on veut ajouter un carré de 4 cm de côté à un des coins du rectangle, quelle sera la nouvelle aire totale ?</h2>
 
-<button onclick="verifierReponse(132)">132 cm²</button>
-<button onclick="verifierReponse(136)">136 cm²</button>
-<button onclick="verifierReponse(148)">148 cm²</button>
-<button onclick="verifierReponse(180)">180 cm²</button>
+
+
+    <button onclick="verifierReponse(this, '132')">132 cm²</button>
+    <button onclick="verifierReponse(this, '136')">136 cm²</button>
+    <button onclick="verifierReponse(this, '148')">148 cm²</button>
+    <button onclick="verifierReponse(this, '180')">180 cm²</button>
 
 <p id="result"></p>
+ <p id="score"></p>
 </div>
-<script>
-function verifierReponse(rep) {
-    var correct = "136";
-    var result = document.getElementById("result");
 
-    if (rep == correct) {
-        result.innerHTML = "Bonne réponse";
-         score++;
+<script>
+let score = 0;
+let dejaRepondu = false;
+
+function verifierReponse(bouton, rep) {
+    if (dejaRepondu) return; 
+    dejaRepondu = true;
+
+    let correct = "136";
+    let result = document.getElementById("result");
+    let scoreAffichage = document.getElementById("score");
+    let boutons = document.querySelectorAll("button");
+
+   
+    boutons.forEach(btn => btn.disabled = true);
+
+    if (rep === correct) {
+        result.innerHTML = "Bonne réponse !";
+        score++;
     } else {
-        result.innerHTML = "Dommage, tu réussira a la prochaine";
+        result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
+
+    scoreAffichage.innerHTML = "Score : " + score + " / 14";
 }
 </script>
+
 <div class="boitebas">
-    
-       <a href="question9.html"> <h3>Continuer le quiz<h3>
-    </div>
+    <a href="Question9.html"><h3>Continuer le quiz</h3></a>
+</div>
+
 </body>
 </html>

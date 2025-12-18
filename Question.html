@@ -6,40 +6,52 @@
 </head>
 <body>
 
-    
-
-<div class="card1"> 
+<div class="card1">
     <h2>
         Un élève achète 3 cahiers à 2 € chacun et un stylo à 4 €.
-         Il paie avec un billet de 20 €.
-      Combien reçoit-il de monnaie ?
-    </h2> 
+        Il paie avec un billet de 20 €.
+        Combien reçoit-il de monnaie ?
+    </h2>
 
+    <button onclick="verifierReponse(this, '12')">12</button>
+    <button onclick="verifierReponse(this, '10')">10</button>
+    <button onclick="verifierReponse(this, '14')">14</button>
+    <button onclick="verifierReponse(this, '6')">6</button>
 
-<button onclick="verifierReponse('12')">12</button>
-<button onclick="verifierReponse('10')">10</button>
-<button onclick="verifierReponse('14')">14</button>
-<button onclick="verifierReponse('6')">6</button>
-
-
-<p id="result"></p>
+    <p id="result"></p>
+    <p id="score"></p>
 </div>
-<script>
-function verifierReponse(rep) {
-    var correct = "10";
-    var result = document.getElementById("result");
 
-    if (rep == correct) {
-        result.innerHTML = "Bonne réponse";
+<script>
+let score = 0;
+let dejaRepondu = false;
+
+function verifierReponse(bouton, rep) {
+    if (dejaRepondu) return; 
+    dejaRepondu = true;
+
+    let correct = "10";
+    let result = document.getElementById("result");
+    let scoreAffichage = document.getElementById("score");
+    let boutons = document.querySelectorAll("button");
+
+   
+    boutons.forEach(btn => btn.disabled = true);
+
+    if (rep === correct) {
+        result.innerHTML = "Bonne réponse !";
         score++;
     } else {
-        result.innerHTML = "Dommage, tu réussira a la prochaine ";
+        result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
+
+    scoreAffichage.innerHTML = "Score : " + score + " / 14";
 }
 </script>
- <div class="boitebas">
-    
-       <a href="Question2.html"> <h3>Continuer le quiz<h3>
-    </div>
+
+<div class="boitebas">
+    <a href="Question2.html"><h3>Continuer le quiz</h3></a>
+</div>
+
 </body>
 </html>
