@@ -44,12 +44,13 @@ function verifierReponse(bouton, rep) {
 
     if (rep === correct) {
         result.innerHTML = "Bonne réponse !";
-        score++;
+        //score++;
+        localStorage.setItem("score", parseInt(localStorage.getItem("score")) + 1);
     } else {
         result.innerHTML = "Dommage, tu réussiras la prochaine fois.";
     }
 
-    scoreAffichage.innerHTML = "Score : " + score + " / 14";
+    scoreAffichage.innerHTML = "Score : " + localStorage.getItem("score") + " / 14";
 }
 </script>
 

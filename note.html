@@ -2,13 +2,23 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-   <div class="card">
-    <h1 style="color: rgb(4, 151, 4);"> Votre note est de <span id="score">0</span> /14  </h1>
-   </div>
     <link rel="stylesheet" href="note.css">
 </head>
 <body>
+   <div class="card">
+ 
+    <h1 id="scoreAffichage" style="color: rgb(4, 151, 4);"> 
+        
+    </h1>
+   </div>
+   
+   <script> 
+   
+   let score=localStorage.getItem("score")
+    document.getElementById("scoreAffichage").innerHTML="Votre score final est de "+score+" / 14"
 
+      </script>
+   
   
 
 </body>
