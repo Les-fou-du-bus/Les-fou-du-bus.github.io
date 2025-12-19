@@ -39,7 +39,7 @@ function verifierReponse(bouton, rep) {
 
    
     boutons.forEach(btn => btn.disabled = true);
-
+     // on verifie si la reponse est correct et on met a jour le score dans le local storage
     if (rep === correct) {
         result.innerHTML = "Bonne réponse !";
         //score++;
