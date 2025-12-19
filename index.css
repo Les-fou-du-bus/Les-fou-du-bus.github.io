@@ -35,3 +35,14 @@ body {
     background-color: #a61d1d;
 }
 
+.boutonhautpage {
+    position: fixed; /* Ou 'sticky' pour un menu */
+    bottom: 20px; /* Distance du bas */
+    right: 20px; /* Distance de la droite */
+    z-index: 100; /* Pour qu'il soit au-dessus des autres éléments */
+    /* Autres styles : padding, border-radius, background-color, etc. */
+    display: none; /* Caché par défaut */
+}
+.boutonhautpage.visible {
+    display: block; /* Affiché lorsqu'il est visible */
+}
