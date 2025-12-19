@@ -36,13 +36,15 @@ body {
 }
 
 .boutonhautpage {
-    position: fixed; /* Ou 'sticky' pour un menu */
-    bottom: 20px; /* Distance du bas */
-    right: 20px; /* Distance de la droite */
-    z-index: 100; /* Pour qu'il soit au-dessus des autres éléments */
-    /* Autres styles : padding, border-radius, background-color, etc. */
-    display: none; /* Caché par défaut */
+   position:absolute;
+    top:15px;
+    z-index: 100;
+    left: 20px; 
+  background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 50px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
-.boutonhautpage.visible {
-    display: block; /* Affiché lorsqu'il est visible */
-}
+
