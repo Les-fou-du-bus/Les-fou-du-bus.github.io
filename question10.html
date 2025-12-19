@@ -41,7 +41,7 @@ function verifierReponse(bouton, rep) {
 
    
     boutons.forEach(btn => btn.disabled = true);
-
+     // on verifie si la reponse est correct et on met a jour le score dans le local storage
     if (rep === correct) {
         result.innerHTML = "Bonne réponse !";
         //score++;
@@ -53,7 +53,7 @@ function verifierReponse(bouton, rep) {
     scoreAffichage.innerHTML = "Score : " + localStorage.getItem("score") + " / 14";
 }
 </script>
-
+<!--div qui permet de mettre une boite en bas a droite pour passer a la prochaine question -->
 <div class="boitebas">
     <a href="Question11.html"><h3>Continuer le quiz</h3></a>
 </div>
