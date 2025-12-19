@@ -6,7 +6,7 @@
 <body>
 
     <link rel="stylesheet" href="question.css">
-
+<!--div qui permet de mettre les question et les réponse dans une carte qui est center au milieu de la page -->
 <div class="card1"> <h2>
 Sophie a 150 euros. Elle veut acheter plusieurs articles. Le premier article coûte 45 euros, le deuxième article coûte 27 euros, et le troisième article coûte 68 euros.
 
@@ -34,7 +34,7 @@ Soustraire cette somme du montant initial de 150 euros.
 <script>
 let score = 0;
 let dejaRepondu = false;
-
+// on definie le local storage pour pouvoir avoir un score continue et pouvoir donner une note a la fin du quiz 
 function verifierReponse(bouton, rep) {
     if (dejaRepondu) return; 
     dejaRepondu = true;

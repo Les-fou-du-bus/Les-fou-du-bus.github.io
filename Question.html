@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="question.css">
 </head>
 <body>
-
+<!--div qui permet de mettre les question et les réponse dans une carte qui est center au milieu de la page -->
 <div class="card1">
     <h2>
         Un élève achète 3 cahiers à 2 € chacun et un stylo à 4 €.
@@ -24,6 +24,7 @@
 
 <script>
 //let score = 0;
+// on definie le local storage pour pouvoir avoir un score continue et pouvoir donner une note a la fin du quiz 
 localStorage.setItem("score", "0");
 let dejaRepondu = false;
 
@@ -38,7 +39,7 @@ function verifierReponse(bouton, rep) {
 
    
     boutons.forEach(btn => btn.disabled = true);
-
+     // on verifie si la reponse est correct et on met a jour le score dans le local storage
     if (rep === correct) {
         result.innerHTML = "Bonne réponse !";
         //score++;
@@ -50,7 +51,7 @@ function verifierReponse(bouton, rep) {
     scoreAffichage.innerHTML = "Score : " + localStorage.getItem("score") + " / 14";
 }
 </script>
-
+<!--bouton pour continuer le quiz et aller a la question suivante -->
 <div class="boitebas">
     <a href="Question2.html"><h3>Continuer le quiz</h3></a>
 </div>

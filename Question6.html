@@ -6,7 +6,7 @@
 <body>
  <link rel="stylesheet" href="question.css">
 
-
+<!--div qui permet de mettre les question et les réponse dans une carte qui est center au milieu de la page -->
 <div class="card1">
     <h2>Un magasin vend un pantalon à 40 $ après une remise de 20 %. Quel était le prix initial du pantalon avant la remise ?</h2>
 
@@ -24,7 +24,7 @@
 <script>
 let score = 0;
 let dejaRepondu = false;
-
+// on definie le local storage pour pouvoir avoir un score continue et pouvoir donner une note a la fin du quiz 
 function verifierReponse(bouton, rep) {
     if (dejaRepondu) return; 
     dejaRepondu = true;

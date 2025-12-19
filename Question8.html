@@ -5,7 +5,7 @@
 </head>
 <body>
  <link rel="stylesheet" href="question.css">
-
+<!--div qui permet de mettre les question et les réponse dans une carte qui est center au milieu de la page -->
 <div class="card1"><h2> Un rectangle a une longueur de 15 cm et une largeur de 8 cm. Si on veut ajouter un carré de 4 cm de côté à un des coins du rectangle, quelle sera la nouvelle aire totale ?</h2>
 
 
@@ -22,7 +22,7 @@
 <script>
 let score = 0;
 let dejaRepondu = false;
-
+// on definie le local storage pour pouvoir avoir un score continue et pouvoir donner une note a la fin du quiz 
 function verifierReponse(bouton, rep) {
     if (dejaRepondu) return; 
     dejaRepondu = true;

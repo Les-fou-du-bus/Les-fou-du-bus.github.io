@@ -1,3 +1,4 @@
+/*designe de la page des questions du quiz */
 body {
     margin: 0;
     height: 100vh;
@@ -10,7 +11,7 @@ body {
     align-items: center;
 }
 
-
+/*designe de la page des questions du quiz */
 .card1 {
     background: rgba(255, 255, 255, 0.9);
     padding: 30px;
@@ -20,17 +21,9 @@ body {
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
-.btn1 {
-    padding: 12px 20px;
-    border: none;
-    background-color: #d62828;
-    color: white;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
 
+
+/*designe des deux boutons */
 .btn:hover {
     background-color: #a61d1d;
 }
